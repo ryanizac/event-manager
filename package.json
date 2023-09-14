@@ -2,10 +2,18 @@
   "name": "schedule",
   "version": "1.0.0",
   "description": "A schedule to organize the life",
-  "scripts": {},
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "esbuild src/server.js --bundle --packages=external --platform=node --target=esnext --format=cjs --outfile=dist/server.js",
+    "start": "node dist/server.js"
+  },
   "keywords": [
     "schedule"
   ],
   "author": "Ryan Izac <io.ryan@outlook.com> (https://www.ryanizac.com.br)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.19.3",
+    "nodemon": "^3.0.1"
+  }
 }
