@@ -1,0 +1,11 @@
+{
+  "name": "schedule",
+  "version": "1.0.0",
+  "description": "A schedule to organize the life",
+  "scripts": {},
+  "keywords": [
+    "schedule"
+  ],
+  "author": "Ryan Izac <io.ryan@outlook.com> (https://www.ryanizac.com.br)",
+  "license": "MIT"
+}
