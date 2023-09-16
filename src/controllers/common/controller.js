@@ -22,6 +22,10 @@
  */
 
 /**
+ * @typedef {(request: RequestOptions) => Promise<RequestResult>} RequestHandler
+ */
+
+/**
  * @typedef {("get" | "post" | "put" | "delete")} RequestMethod
  * @typedef {string} RequestPath
  */
