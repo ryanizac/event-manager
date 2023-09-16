@@ -15,7 +15,10 @@
  * @property {("data")} type
  * @property {any} data
  *
- * @typedef {ErrorResult | SuccessResult} RequestResult
+ * @typedef {Object} CommonResult
+ * @property {number} code
+ *
+ * @typedef {CommonResult & (ErrorResult | SuccessResult)} RequestResult
  */
 
 /**

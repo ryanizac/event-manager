@@ -49,18 +49,21 @@ export class CreateEventRestController {
       });
 
       return {
+        code: 200,
         type: "data",
         data,
       };
     } catch (error) {
       if (error instanceof Error) {
         return {
+          code: 400,
           type: "error",
           error: error.message,
         };
       }
 
       return {
+        code: 500,
         type: "error",
         error: "Internal server error",
       };
