@@ -18,4 +18,15 @@
  * @typedef {ErrorResult | SuccessResult} RequestResult
  */
 
+/**
+ * @typedef {("get" | "post" | "put" | "delete")} RequestMethod
+ * @typedef {string} RequestPath
+ */
+
+/**
+ * @typedef {Object} RoutableOptions
+ * @property {RequestMethod} method
+ * @property {RequestPath} path
+ */
+
 export default {};

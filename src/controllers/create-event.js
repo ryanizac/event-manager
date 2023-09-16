@@ -7,6 +7,20 @@ import { CreateEventService } from "../services/index.js";
 
 export class CreateEventController {
   /**
+   * @type {import("./common/controller.js").RequestMethod}
+   * @readonly
+   * @public
+   */
+  method = "post";
+
+  /**
+   * @type {import("./common/controller.js").RequestPath}
+   * @readonly
+   * @public
+   */
+  path = "/event";
+
+  /**
    * @type {CreateEventService}
    * @readonly
    * @private
