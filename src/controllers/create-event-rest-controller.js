@@ -40,7 +40,35 @@ export class CreateEventRestController {
    * @returns {import("./common/controller.js").RequestResult}
    */
   async execute(request) {
-    const { name, date } = request.body;
+    const { name, date } = request.body,
+      /** @type {string[]} */
+      errors = [];
+
+    if (name === undefined) {
+      errors.push("The name must be provided");
+    } else if (name === null) {
+      errors.push("The name cannot be empty");
+    } else if (typeof name !== "string") {
+      errors.push("The name must be a string");
+    }
+
+    if (date === undefined) {
+      errors.push("The date must be provided");
+    } else if (date === null) {
+      errors.push("The date cannot be empty");
+    } else if (typeof date !== "string") {
+      errors.push("The date must be a string");
+    }
+
+    if (errors.length > 0) {
+      const message = errors.join(", ");
+
+      return {
+        type: "error",
+        code: 400,
+        error: message,
+      };
+    }
 
     try {
       const data = await this.service.execute({
