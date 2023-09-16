@@ -1,4 +1,5 @@
 import { CreateEventService } from "../services/index.js";
+import { DateUtil } from "../utils/index.js";
 
 /**
  * @typedef {Object} Ports
@@ -40,7 +41,7 @@ export class CreateEventRestController {
    * @returns {import("./common/controller.js").RequestResult}
    */
   async execute(request) {
-    const { name, date } = request.body,
+    const { name, date: initialDate } = request.body,
       /** @type {string[]} */
       errors = [];
 
@@ -52,12 +53,18 @@ export class CreateEventRestController {
       errors.push("The name must be a string");
     }
 
-    if (date === undefined) {
+    if (initialDate === undefined) {
       errors.push("The date must be provided");
-    } else if (date === null) {
+    } else if (initialDate === null) {
       errors.push("The date cannot be empty");
-    } else if (typeof date !== "string") {
+    } else if (typeof initialDate !== "string") {
       errors.push("The date must be a string");
+    }
+
+    const date = DateUtil.parseDate(initialDate);
+
+    if (date === undefined) {
+      errors.push("The date is invalid");
     }
 
     if (errors.length > 0) {
