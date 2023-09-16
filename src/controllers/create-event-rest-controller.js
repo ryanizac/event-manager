@@ -5,7 +5,7 @@ import { CreateEventService } from "../services/index.js";
  * @property {CreateEventService} service
  */
 
-export class CreateEventController {
+export class CreateEventRestController {
   /**
    * @type {import("./common/controller.js").RequestMethod}
    * @readonly
