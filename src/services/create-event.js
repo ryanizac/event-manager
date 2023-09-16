@@ -1,7 +1,7 @@
 /**
  * @typedef {Object} Args
  * @property {string} name
- * @property {string} date
+ * @property {Date} date
  */
 
 /**
@@ -19,9 +19,8 @@ export class CreateEventService {
    * @param {Args} args
    * @returns {Promise<Result>}
    */
-  async execute({ name, date: entryDate }) {
-    const date = new Date(entryDate),
-      createdAt = new Date(),
+  async execute({ name, date }) {
+    const createdAt = new Date(),
       updatedAt = createdAt,
       id = Math.random().toString().replace("0.", "");
 
