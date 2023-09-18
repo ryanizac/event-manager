@@ -1,7 +1,7 @@
 {
-  "name": "schedule",
+  "name": "event-manager",
   "version": "1.0.0",
-  "description": "A schedule to organize the life",
+  "description": "An application to manage events",
   "scripts": {
     "dev": "node scripts/dev.js",
     "build": "esbuild src/server.js --bundle --packages=external --platform=node --target=esnext --format=cjs --outfile=dist/server.js",
