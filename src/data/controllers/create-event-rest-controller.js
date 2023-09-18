@@ -1,5 +1,5 @@
 import { CreateEventService } from "../services/index.js";
-import { DateUtil } from "../../utils/index.js";
+import { DateUtil } from "../../shared/index.js";
 
 /**
  * @typedef {Object} Ports
