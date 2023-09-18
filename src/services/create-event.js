@@ -16,6 +16,18 @@
 export class CreateEventService {
   /**
    *
+   * @param {import("./ports").IdGenerator} idGenerator
+   */
+  constructor(idGenerator) {
+    /**
+     * @private
+     * @readonly
+     */
+    this.idGenerator = idGenerator;
+  }
+
+  /**
+   *
    * @param {Args} args
    * @returns {Promise<Result>}
    */
@@ -30,7 +42,7 @@ export class CreateEventService {
 
     const createdAt = new Date(),
       updatedAt = createdAt,
-      id = Math.random().toString().replace("0.", "");
+      id = this.idGenerator.generate();
 
     return {
       id,
