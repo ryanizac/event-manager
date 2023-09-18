@@ -1,6 +1,6 @@
 import "dotenv/config";
-import { ExpressApp } from "./adapters";
-import { createEventRestControllerFactory } from "./factories/index.js";
+import { ExpressApp } from "./main/adapters/index.js";
+import { createEventRestControllerFactory } from "./main/factories/index.js";
 
 (async function () {
   const PORT = process.env.PORT || 3000;

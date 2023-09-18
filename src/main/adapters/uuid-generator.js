@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 
 /**
- * @typedef {import("../data/services/ports").IdGenerator} IdGenerator
+ * @typedef {import("../../data/services/ports").IdGenerator} IdGenerator
  */
 
 /**

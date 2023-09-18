@@ -1,7 +1,7 @@
 import {
   CreateEventRestController,
   CreateEventService,
-} from "../data/index.js";
+} from "../../data/index.js";
 import { UUIDGenerator } from "../adapters/index.js";
 
 export function createEventRestControllerFactory() {
