@@ -13,17 +13,21 @@
  * @property {Date} date
  */
 
+/**
+ * @typedef {Object} Ports
+ * @property {import("./ports").IdGenerator} idGenerator
+ */
+
 export class CreateEventService {
   /**
-   *
-   * @param {import("./ports").IdGenerator} idGenerator
+   * @param {Ports} ports
    */
-  constructor(idGenerator) {
+  constructor(ports) {
     /**
      * @private
      * @readonly
      */
-    this.idGenerator = idGenerator;
+    this.idGenerator = ports.idGenerator;
   }
 
   /**
